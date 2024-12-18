@@ -7,6 +7,7 @@ ffmpeg -i downloaded_video_1080p.f137.mp4 -i downloaded_video_1080p.f140.m4a -c:
 1. 공식 FFmpeg 웹사이트(https://ffmpeg.org/download.html)로 이동합니다.
 2. Windows 버전을 다운로드하기 위해 링크 이동: FFmpeg builds: https://www.gyan.dev/ffmpeg/builds/
 3. git master builds > "ffmpeg-release-essentials.zip" 파일을 다운로드합니다.
+4. 설치된 경로 체크하기
 
 ■ ffmpeg 환경 변수 설정
 1. ffmpeg 명령어를 어디서든 실행할 수 있도록 시스템 PATH에 추가합니다.

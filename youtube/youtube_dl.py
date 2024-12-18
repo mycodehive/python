@@ -20,11 +20,15 @@ def get_video_title(url):
     except Exception as e:
         print("Error while fetching video title:", e)
         return None
+
+def sanitize_filename(filename):
+    # Replace characters not allowed in file names
+    return re.sub(r'[\\/*?:"<>|]', "", filename)
     
 def download_youtube_video_with_yt_dlp(url):
     try:
         # Get Title
-        output_filename = get_video_title(url)
+        output_filename = sanitize_filename(get_video_title(url))
         if not output_filename:
             output_filename = "downloaded_video"  # Default if title fetching fails
 

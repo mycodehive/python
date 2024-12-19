@@ -83,7 +83,7 @@
 81. API 제작 - FastAPI로 간단한 REST API 구축.
 82. 추천 시스템 - 간단한 상품 추천 알고리즘.
 83. 음악 플레이어 - MP3 파일 재생 앱.
-84. 번역기 앱 - Google Translate API를 이용.
+84. 번역기 앱 - Google Translate API를 이용. (https://github.com/sahuni/python/blob/main/translate/deep_translator_google.py)
 85. 온라인 시험 앱 - 퀴즈와 정답 확인 기능 포함.
 86. 패스워드 크래커 시뮬레이터 - 간단한 해시 브루트포스.
 87. 시간표 생성기 - 간단한 스케줄링 알고리즘.

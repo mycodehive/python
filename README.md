@@ -1,4 +1,4 @@
-# python(하루에 하나씩 만들기)
+# python(하루에 하나씩 만들기 및 꾸준히 업데이트하기)
 
 1. 유튜브 다운로드 프로그램 - yt-dlp를 이용한 비디오 다운로드. (https://github.com/sahuni/python/tree/main/youtube)
 2. 유투브 다운로드 pyq5 - 고화질 다운로드 윈도우 UI (https://github.com/sahuni/python/tree/main/youtube_pyQ5)

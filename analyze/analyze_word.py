@@ -33,7 +33,8 @@ def analyze_word_frequency_with_exclusion(excel_file, sheet_name, column_index, 
 excel_file = 'C:\\Users\\aaaaa\\Downloads\\analyze_target.xlsx'
 sheet_name = 'Sheet1'
 column_index = 5
-exclude_words = ['요청', '문의', '수정', '건', '관련', '변경', '수정요청' ,'확인' ,
-                 '요청의', '오류', '시', '과제', '요청드립니다' ,'문의드립니다', '및', '조회']  # 제외할 단어 리스트
+# Read exclude words from a file
+with open('exclude.txt', 'r', encoding='utf-8') as file:
+    exclude_words = [line.strip() for line in file if line.strip()]
 
 analyze_word_frequency_with_exclusion(excel_file, sheet_name, column_index, exclude_words)

@@ -7,7 +7,7 @@
 5. 타이머 - 간단한 카운트다운 타이머.
 6. 텍스트 파일 단어 빈도 분석기 - 파일에서 단어 빈도를 계산. (https://github.com/sahuni/python/blob/main/analyze/analyze_word.py)
 7. 단위 변환기 - km↔mile, kg↔lb 등 변환기.
-8. 암호 생성기 - 랜덤 비밀번호 생성기.(https://github.com/sahuni/python/password/random_password.py)
+8. 암호 생성기 - 랜덤 비밀번호 생성기 (https://github.com/sahuni/python/blob/main/password/random_password.py)
 9. 날짜 계산기 - 특정 날짜로부터 며칠 후/전 날짜 계산.
 10. 이메일 검증기 - 이메일 형식 유효성 검사.
 11. 가위바위보 게임 - 컴퓨터와 사용자 간의 게임.

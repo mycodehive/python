@@ -1,3 +1,9 @@
+"""
+Description : YouTube Ultra HD Downloader Using PyQt5
+Location : https://github.com/sahuni/python
+Date : 2024.12.18
+"""
+
 import sys, os, subprocess
 from PyQt5 import QtWidgets, uic
 from PyQt5.QtCore import QThread, pyqtSignal

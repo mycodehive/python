@@ -1,3 +1,9 @@
+"""
+Description : A Python program to merge multiple PDF files into a single PDF file.
+Location : https://github.com/sahuni/python
+Date : 2024.12.18
+"""
+
 import PyPDF2  # Import the PyPDF2 library for PDF manipulation
 import os  # Import the os library for file and directory operations
 

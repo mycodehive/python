@@ -1,3 +1,8 @@
+"""
+Description : Code to get a short address using the shorturl API
+Location : https://github.com/sahuni/python
+Date : 2024.12.18
+"""
 import requests
 from bs4 import BeautifulSoup
 

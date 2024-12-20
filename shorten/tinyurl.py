@@ -1,3 +1,8 @@
+"""
+Description : Code to get a short address by parsing the result page without API
+Location : https://github.com/sahuni/python
+Date : 2024.12.18
+"""
 import requests
 
 def shorten_url(long_url):

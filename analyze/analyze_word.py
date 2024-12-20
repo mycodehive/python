@@ -1,3 +1,8 @@
+"""
+Description : A Python program to analyze word frequency in a specific column of an Excel file, excluding specific words.
+Location : https://github.com/sahuni/python
+Date : 2024.12.18
+"""
 import pandas as pd
 from collections import Counter
 import re

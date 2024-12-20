@@ -1,3 +1,9 @@
+"""
+Description : This script generates a random password of the desired length with the option to include letters, digits, and punctuation.
+Location : https://github.com/sahuni/python
+Date : 2024.12.18
+"""
+
 import random
 import string
 

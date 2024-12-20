@@ -1,3 +1,9 @@
+"""
+Description : A Python program to translate text in a file from one language to another using Google Translator.
+Location : https://github.com/sahuni/python
+Date : 2024.12.18
+"""
+
 # pip install deep-translator
 
 from deep_translator import GoogleTranslator

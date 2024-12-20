@@ -65,7 +65,7 @@
 63. 캘린더 앱 - 날짜 저장 및 메모 기능.
 64. 간단한 게임 - Python의 Pygame으로 벽돌깨기 게임.
 65. 챗봇 개발 - 간단한 규칙 기반 챗봇.
-66. IoT 기기 제어 앱 - MQTT를 이용해 장치 제어.
+66. HEIC to JPG - IOS 이미지 파일을 jpg로.(https://github.com/sahuni/python/blob/main/mov_img/heictojpg.py)
 67. PDF에서 텍스트 추출 - PyPDF2를 사용해 텍스트 추출.
 68. 미로 생성기 - 랜덤으로 미로를 생성하고 출력.
 69. AI 이미지 분류기 - TensorFlow/Keras로 간단한 모델 학습.

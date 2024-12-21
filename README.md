@@ -1,7 +1,7 @@
 # python(하루에 하나씩 만들기 및 꾸준히 업데이트하기)
 
-1. 유튜브 다운로드 프로그램 - yt-dlp를 이용한 비디오 다운로드. (https://github.com/sahuni/python/tree/main/youtube)
-2. 유투브 다운로드 pyq5 - 고화질 다운로드 윈도우 UI (https://github.com/sahuni/python/tree/main/youtube_pyQ5)
+1. 유튜브 다운로드 프로그램 - yt-dlp를 이용한 비디오 다운로드. ([https://github.com/sahuni/python/tree/main/youtube](https://github.com/sahuni/python/tree/main/mov/youtube))
+2. 유투브 다운로드 pyq5 - 고화질 다운로드 윈도우 UI ([https://github.com/sahuni/python/tree/main/youtube_pyQ5](https://github.com/sahuni/python/tree/main/mov/youtube_pyQ5))
 3. 단어 뒤집기 - 사용자 입력 문자열을 뒤집는 프로그램.
 4. 계산기 - 사칙연산을 지원하는 계산기.
 5. 타이머 - 간단한 카운트다운 타이머.
@@ -65,7 +65,7 @@
 63. 캘린더 앱 - 날짜 저장 및 메모 기능.
 64. 간단한 게임 - Python의 Pygame으로 벽돌깨기 게임.
 65. 챗봇 개발 - 간단한 규칙 기반 챗봇.
-66. HEIC to JPG - IOS 이미지 파일을 jpg로.(https://github.com/sahuni/python/blob/main/mov_img/heictojpg.py)
+66. HEIC to JPG - IOS 이미지 파일을 jpg로.([https://github.com/sahuni/python/blob/main/mov_img/heictojpg.py](https://github.com/sahuni/python/blob/main/img/heictojpg.py))
 67. PDF에서 텍스트 추출 - PyPDF2를 사용해 텍스트 추출.
 68. 미로 생성기 - 랜덤으로 미로를 생성하고 출력.
 69. AI 이미지 분류기 - TensorFlow/Keras로 간단한 모델 학습.
@@ -94,7 +94,7 @@
 92. 교통정보 알림 앱 - 실시간 교통 API 사용.
 93. 가상 음성 회의 관리자 - 대화 요약 및 참가자 확인.
 94. 명함 스캐너 - 명함에서 텍스트 추출 후 저장.
-95. 비디오 편집기 - ffmpeg를 이용해 영상 자르기/합치기. (https://github.com/sahuni/python/blob/main/mov_img/ffmpeg_edit.py)
+95. 비디오 편집기 - ffmpeg를 이용해 영상 자르기/합치기. ([https://github.com/sahuni/python/blob/main/mov_img/ffmpeg_edit.py](https://github.com/sahuni/python/tree/main/mov/ffmpeg))
 96. 게임 개발 - 간단한 2D 플랫폼 게임.
 97. DNA 분석 앱 - DNA 시퀀스를 분석하는 프로그램.
 98. 도서 관리 시스템 - 책 대출/반납 기능 포함.

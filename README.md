@@ -67,7 +67,8 @@
 53. 웹사이트 성능 모니터링 - 특정 URL의 응답 시간 측정.
 54. 음성 인식기 - SpeechRecognition을 사용한 음성 텍스트 변환.
 55. 캠 사진 촬영 앱 - OpenCV를 사용한 간단한 사진 앱.
-56. 이미지에서 텍스트 추출 - OCR(예: Tesseract) 사용.
+56. 이미지에서 텍스트 추출 - OCR(예: Tesseract) 사용
+    - https://github.com/sahuni/python/blob/main/img/extract_text.py
 57. 뉴스 알림 프로그램 - 특정 주제의 최신 뉴스 크롤링.
 58. 플래시카드 학습 앱 - 랜덤으로 질문과 답을 표시.
 59. 텍스트 요약기 - 간단한 NLP 모델로 텍스트 요약.

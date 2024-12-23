@@ -77,7 +77,7 @@
 64. 간단한 게임 - Python의 Pygame으로 벽돌깨기 게임.
 65. 챗봇 개발 - 간단한 규칙 기반 챗봇.
 66. HEIC to JPG - IOS 이미지 파일을 jpg로.
-   - https://github.com/sahuni/python/blob/main/mov_img/heictojpg.py
+    - https://github.com/sahuni/python/blob/main/mov_img/heictojpg.py
 67. PDF에서 텍스트 추출 - PyPDF2를 사용해 텍스트 추출.
 68. PDF에서 페이지 추출 - PyPDF2를 사용해 페이지 추출.
     - https://github.com/sahuni/python/blob/main/pdf/pdf_extract.py

@@ -17,7 +17,8 @@
 11. 가위바위보 게임 - 컴퓨터와 사용자 간의 게임.
 12. 구구단 생성기 - 사용자가 원하는 단의 구구단 출력.
 13. BMI 계산기 - 키와 몸무게를 입력받아 BMI를 계산.
-14. 달력 출력 - 특정 월의 달력을 출력.
+14. 달력 출력 - 특정 월의 달력을 출력. 
+   - https://github.com/sahuni/python/blob/main/date/get_month.py
 15. 리스트 정렬기 - 숫자 리스트를 오름차순/내림차순으로 정렬.
 16. 숫자 합산기 - 사용자 입력 숫자의 합 계산.
 17. 날씨 정보 조회 - 간단한 날씨 API 사용해 현재 날씨 출력.
@@ -25,7 +26,8 @@
 19. 텍스트 암호화/복호화 - 간단한 시저 암호 구현.
 20. 퀴즈 게임 - 5개 이상의 문제로 구성된 간단한 퀴즈.
 21. Fibonacci 시리즈 - N번째까지 피보나치 수열 계산.
-22. QR 코드 생성기 - 텍스트를 QR 코드로 변환.
+22. QR 코드 생성기 - 텍스트를 QR 코드로 변환. 
+   - https://github.com/sahuni/python/blob/main/etc/qr_generate.py
 23. PDF 병합기 - 여러 PDF 파일을 하나로 병합. 
     - https://github.com/sahuni/python/blob/main/pdf/pdf_merge.py
 24. 파일 암호화 프로그램 - 파일 내용을 암호화/복호화 
@@ -77,7 +79,8 @@
 66. HEIC to JPG - IOS 이미지 파일을 jpg로.
    - https://github.com/sahuni/python/blob/main/mov_img/heictojpg.py
 67. PDF에서 텍스트 추출 - PyPDF2를 사용해 텍스트 추출.
-68. 미로 생성기 - 랜덤으로 미로를 생성하고 출력.
+68. PDF에서 페이지 추출 - PyPDF2를 사용해 페이지 추출.
+    - https://github.com/sahuni/python/blob/main/pdf/pdf_extract.py
 69. AI 이미지 분류기 - TensorFlow/Keras로 간단한 모델 학습.
 70. 상품 가격 비교기 - 여러 쇼핑몰의 상품 가격 크롤링.
 71. 지도 시각화 앱 - Folium을 이용한 지도 데이터 출력.

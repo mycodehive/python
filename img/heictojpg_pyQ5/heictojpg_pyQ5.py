@@ -47,7 +47,12 @@ class HEICtoJPEGConverter(QWidget):
         for file_name in os.listdir(self.input_dir):
             if file_name.lower().endswith(".heic"):
                 heic_path = os.path.join(self.input_dir, file_name)
-                jpeg_path = os.path.join(output_dir, file_name.rsplit(".", 1)[0] + ".jpg")
+                # List of convertible extensions
+                valid_extensions = [".heic", ".HEIC"]
+
+                # Handle file extensions case-insensitively
+                if any(file_name.endswith(ext) for ext in valid_extensions):
+                    jpeg_path = os.path.join(output_dir, file_name.rsplit(".", 1)[0] + ".jpg")
 
                 image = Image.open(heic_path)
                 image.save(jpeg_path, "JPEG")

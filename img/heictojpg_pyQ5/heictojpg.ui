@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>QWidget</class>
+ <widget class="QWidget" name="MainWindow">
+  <layout class="QVBoxLayout" name="verticalLayout">
+<widget class="QPushButton" name="selectFolderButton">
+ <property name="text">
+  <string>Select Source Folder</string>
+ </property>
+</widget>
+<widget class="QPushButton" name="convertButton">
+ <property name="text">
+  <string>Start Conversion</string>
+ </property>
+</widget>
+    </property>
+   </widget>
+  </layout>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

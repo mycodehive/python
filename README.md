@@ -66,7 +66,8 @@
 49. CSV 데이터 분석기 - CSV 파일에서 통계 정보 추출.
 50. 주식 데이터 시각화 - 주식 API를 이용해 그래프 출력.
 51. 블로그 크롤러 - 특정 블로그의 게시물 수집.
-52. Todo 리스트 앱 - 데이터베이스를 사용해 할 일 관리.
+52. Todo 리스트 앱 - 데이터베이스를 사용해 할 일 관리. 
+    - https://github.com/sahuni/python/blob/main/work/todo_list_sqlite.py
 53. 웹사이트 성능 모니터링 - 특정 URL의 응답 시간 측정.
 54. 음성 인식기 - SpeechRecognition을 사용한 음성 텍스트 변환.
 55. 캠 사진 촬영 앱 - OpenCV를 사용한 간단한 사진 앱.

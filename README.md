@@ -81,7 +81,8 @@
 62. 데이터베이스 CRUD 앱 - SQLite로 CRUD 기능 구현.
 63. 캘린더 앱 - 날짜 저장 및 메모 기능.
 64. 간단한 게임 - Python의 Pygame으로 벽돌깨기 게임.
-65. 챗봇 개발 - 간단한 규칙 기반 챗봇.
+65. HEIC to JPG - GUI
+    - https://github.com/sahuni/python/tree/main/img/heictojpg_pyQ5
 66. HEIC to JPG - IOS 이미지 파일을 jpg로.
     - https://github.com/sahuni/python/blob/main/mov_img/heictojpg.py
 67. PDF에서 텍스트 추출 - PyPDF2를 사용해 텍스트 추출.

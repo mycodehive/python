@@ -38,9 +38,12 @@
 28. 텍스트 음성 변환기 - TTS API를 사용해 텍스트를 음성으로 변환.
 29. 날씨 알림 봇 - 특정 시간마다 날씨 정보를 제공.
 30. 이미지 필터 프로그램 - 흑백, 세피아 등 필터 적용.
-31. URL 단축기 - TinyURL API를 사용해 URL 단축.
+31. URL 단축기 - TinyURL API를 사용해 URL 단축
+    - https://github.com/sahuni/python/blob/main/web/shorturl.py
+    - https://github.com/sahuni/python/blob/main/web/tinyurl.py
 32. 메모장 프로그램 - 텍스트 저장/열기 기능 포함.
-33. 암호 관리 프로그램 - 사용자의 암호를 안전하게 저장.
+33. 암호 관리 프로그램 - 사용자의 암호를 안전하게 저장
+    - https://github.com/sahuni/python/blob/main/secure/pw_management.py
 34. 랜덤 명언 출력기 - 유명한 명언을 랜덤 출력.
 35. 이름 생성기 - 랜덤으로 이름 생성.
 36. 화폐 교환 계산기 - 환율 API를 사용해 화폐 단위 변환.

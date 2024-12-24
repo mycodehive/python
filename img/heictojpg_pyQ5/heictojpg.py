@@ -3,8 +3,26 @@ import os
 from PyQt5.QtWidgets import QApplication, QWidget, QVBoxLayout, QPushButton, QFileDialog, QTextEdit
 from PIL import Image
 import pillow_heif
+import importlib
+import time
+import threading
 
 pillow_heif.register_heif_opener()
+
+def P_From_n_Import(xModule_Name):
+    vModule = importlib.import_module(xModule_Name)
+    globals().update({n: getattr(vModule, n) for n in dir(vModule)})
+
+def P_Import(xModule_Name):
+    return importlib.import_module(xModule_Name)
+
+def F_Is_Exist_Module(xModule_Name):
+    return importlib.util.find_spec(xModule_Name) is not None
+
+def long_initialization():
+    # Example of a complex initialization task
+    time.sleep(3)  # Example: time-consuming task
+    print("Initialization complete.")
 
 class HEICtoJPEGConverter(QWidget):
     def __init__(self):
@@ -64,6 +82,8 @@ class HEICtoJPEGConverter(QWidget):
 
 if __name__ == '__main__':
     app = QApplication(sys.argv)
+    init_thread = threading.Thread(target=long_initialization)
+    init_thread.start()
     converter = HEICtoJPEGConverter()
     converter.show()
     sys.exit(app.exec_())

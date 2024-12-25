@@ -4,14 +4,26 @@ Location : https://github.com/sahuni/python
 Date : 2024.12.24
 """
 # pyuic5 -o youtube_downloader_ui.py youtube_downloader.ui
-import sys
 import subprocess
-import os
-import re
+import os, re, importlib, time, threading
 from PyQt5 import QtWidgets
 from PyQt5.QtCore import QThread, pyqtSignal
 from PyQt5.QtWidgets import QMainWindow, QApplication
 
+def P_From_n_Import(xModule_Name):
+    vModule = importlib.import_module(xModule_Name)
+    globals().update({n: getattr(vModule, n) for n in dir(vModule)})
+
+def P_Import(xModule_Name):
+    return importlib.import_module(xModule_Name)
+
+def F_Is_Exist_Module(xModule_Name):
+    return importlib.util.find_spec(xModule_Name) is not None
+
+def long_initialization():
+    # Example of a complex initialization task
+    time.sleep(3)  # Example: time-consuming task
+    print("Initialization complete.")
 
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
@@ -69,7 +81,8 @@ class DownloadThread(QThread):
                 self.command,
                 stdout=subprocess.PIPE,
                 stderr=subprocess.STDOUT,
-                text=True
+                text=True,
+                creationflags=subprocess.CREATE_NO_WINDOW  # 콘솔 창 숨기기
             )
 
             # 실시간 로그 전달
@@ -142,6 +155,8 @@ class YouTubeDownloaderApp(QMainWindow):
 
 if __name__ == "__main__":
     app = QApplication([])
+    init_thread = threading.Thread(target=long_initialization)
+    init_thread.start()
     window = YouTubeDownloaderApp()
     window.show()
     app.exec_()

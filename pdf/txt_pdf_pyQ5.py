@@ -1,5 +1,3 @@
-# pyinstaller -w -F --add-data "NanumGothic.ttf;." md2pdf.py
-
 import sys
 import os
 import markdown2
@@ -17,6 +15,9 @@ from PyQt5.QtWidgets import (
     QVBoxLayout,
     QWidget,
     QLabel,
+    QRadioButton,
+    QButtonGroup,
+    QHBoxLayout,
 )
 from PyQt5.QtGui import QCursor
 from PyQt5.QtCore import Qt
@@ -26,7 +27,6 @@ import webbrowser
 
 # 폰트 경로
 FONT_PATH = os.path.join(os.path.dirname(__file__), "NanumGothic.ttf")
-print(FONT_PATH)
 
 # 한글 폰트 등록
 if os.path.exists(FONT_PATH):
@@ -34,14 +34,16 @@ if os.path.exists(FONT_PATH):
 else:
     raise FileNotFoundError(f"폰트 파일이 {FONT_PATH} 경로에 없습니다. 폰트를 포함하여 배포하세요.")
 
-def md_to_pdf(md_text, output_pdf_path):
-    # Convert Markdown to HTML
-    html_text = markdown2.markdown(md_text)
-    
-    # Parse HTML with BeautifulSoup to handle line breaks and structure
-    soup = BeautifulSoup(html_text, "html.parser")
-    elements = soup.find_all(["p", "h1", "h2", "h3", "ul", "li", "br"])
-    
+def md_to_pdf(md_text, output_pdf_path, is_markdown=True):
+    # If Markdown, process it
+    if is_markdown:
+        html_text = markdown2.markdown(md_text)
+        soup = BeautifulSoup(html_text, "html.parser")
+        elements = soup.find_all(["p", "h1", "h2", "h3", "ul", "li", "br"])
+    else:
+        # Treat text as plain text (no Markdown conversion)
+        elements = [{"name": "p", "text": md_text}]
+
     # Create PDF document with reduced margins
     pdf = SimpleDocTemplate(
         output_pdf_path,
@@ -49,31 +51,36 @@ def md_to_pdf(md_text, output_pdf_path):
         leftMargin=36,
         rightMargin=36,
         topMargin=36,
-        bottomMargin=36
+        bottomMargin=36,
     )
-    
+
     styles = getSampleStyleSheet()
-    styles.add(ParagraphStyle(name='KoreanNormal', fontName='NanumGothic', fontSize=12, leading=18))
-    styles.add(ParagraphStyle(name='KoreanHeading1', fontName='NanumGothic', fontSize=16, leading=22, spaceAfter=12))
-    styles.add(ParagraphStyle(name='KoreanHeading2', fontName='NanumGothic', fontSize=14, leading=20, spaceAfter=10))
-    
+    styles.add(ParagraphStyle(name="KoreanNormal", fontName="NanumGothic", fontSize=12, leading=18))
+    styles.add(ParagraphStyle(name="KoreanHeading1", fontName="NanumGothic", fontSize=16, leading=22, spaceAfter=12))
+    styles.add(ParagraphStyle(name="KoreanHeading2", fontName="NanumGothic", fontSize=14, leading=20, spaceAfter=10))
+
     flowables = []
-    
-    # Add content with line breaks and proper styling
+
+    # Process elements
     for element in elements:
-        if element.name in ["h1", "h2", "h3"]:
-            style = styles['KoreanHeading1'] if element.name == "h1" else (
-                styles['KoreanHeading2'] if element.name == "h2" else styles['KoreanNormal']
-            )
-            flowables.append(Paragraph(element.text, style))
-        elif element.name == "p":
-            flowables.append(Paragraph(element.text, styles['KoreanNormal']))
-        elif element.name == "li":
-            flowables.append(Paragraph(f"• {element.text}", styles['KoreanNormal']))
-        elif element.name == "br":
-            flowables.append(Spacer(1, 12))  # Add spacing for line breaks
-        flowables.append(Spacer(1, 6))  # Add space between paragraphs
-    
+        if isinstance(element, dict):  # For plain text mode
+            flowables.append(Paragraph(element["text"], styles["KoreanNormal"]))
+        else:  # For Markdown mode
+            if element.name in ["h1", "h2", "h3"]:
+                style = (
+                    styles["KoreanHeading1"]
+                    if element.name == "h1"
+                    else (styles["KoreanHeading2"] if element.name == "h2" else styles["KoreanNormal"])
+                )
+                flowables.append(Paragraph(element.text, style))
+            elif element.name == "p":
+                flowables.append(Paragraph(element.text, styles["KoreanNormal"]))
+            elif element.name == "li":
+                flowables.append(Paragraph(f"• {element.text}", styles["KoreanNormal"]))
+            elif element.name == "br":
+                flowables.append(Spacer(1, 12))  # Add spacing for line breaks
+            flowables.append(Spacer(1, 6))  # Add space between paragraphs
+
     # Build the PDF
     pdf.build(flowables)
 
@@ -94,6 +101,19 @@ class PDFConverterApp(QMainWindow):
         self.text_area = QTextEdit(self)
         self.text_area.setPlaceholderText("여기에 텍스트를 입력하세요...")
         layout.addWidget(self.text_area)
+
+        # Radio buttons for conversion type
+        self.radio_group = QButtonGroup(self)
+        self.radio_md = QRadioButton("Markdown 변환")
+        self.radio_plain = QRadioButton("화면 그대로 변환")
+        self.radio_group.addButton(self.radio_md)
+        self.radio_group.addButton(self.radio_plain)
+        self.radio_md.setChecked(True)  # Default option
+
+        radio_layout = QHBoxLayout()
+        radio_layout.addWidget(self.radio_md)
+        radio_layout.addWidget(self.radio_plain)
+        layout.addLayout(radio_layout)
 
         # Button to select output location
         self.select_location_button = QPushButton("PDF 저장 위치 선택", self)
@@ -143,7 +163,8 @@ class PDFConverterApp(QMainWindow):
             return
 
         try:
-            md_to_pdf(md_text, self.output_path)
+            is_markdown = self.radio_md.isChecked()  # Check selected option
+            md_to_pdf(md_text, self.output_path, is_markdown)
             self.status_label.setText(f"PDF 저장 완료: {self.output_path}")
         except Exception as e:
             self.status_label.setText(f"오류 발생: {str(e)}")

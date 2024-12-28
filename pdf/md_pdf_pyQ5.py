@@ -1,3 +1,9 @@
+"""
+Description : This program converts Markdown content to PDF.
+Location : https://github.com/sahuni/python
+Date : 2024.12.28
+"""
+
 # pyinstaller -w -F --add-data "NanumGothic.ttf;." md2pdf.py
 
 import sys

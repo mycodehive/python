@@ -1,3 +1,8 @@
+"""
+Description : This script builds a Python script into an EXE file using PyInstaller.
+Location : https://github.com/sahuni/python
+Date : 2025.01.11
+"""
 import sys
 import os
 import subprocess
@@ -23,13 +28,15 @@ class ExeBuilder(QWidget):
     def __init__(self):
         super().__init__()
         self.setWindowTitle("PyInstaller EXE Builder")
-        self.setGeometry(300, 300, 500, 450)
+        self.setGeometry(300, 300, 500, 500)
 
         self.layout = QVBoxLayout()
         self.file_label = QLabel("Select a Python file to build into EXE")
         self.select_button = QPushButton("Select Python File")
         self.exe_name_label = QLabel("Enter EXE filename (without extension):")
         self.exe_name_input = QLineEdit()
+        self.options_label = QLabel("Enter additional PyInstaller options (excluding -w, -F):")
+        self.options_input = QLineEdit()
         self.build_button = QPushButton("Build EXE")
         self.build_button.setEnabled(False)
         self.log_output = QTextEdit()
@@ -39,6 +46,8 @@ class ExeBuilder(QWidget):
         self.layout.addWidget(self.select_button)
         self.layout.addWidget(self.exe_name_label)
         self.layout.addWidget(self.exe_name_input)
+        self.layout.addWidget(self.options_label)
+        self.layout.addWidget(self.options_input)
         self.layout.addWidget(self.build_button)
         self.layout.addWidget(self.log_output)
         self.setLayout(self.layout)
@@ -66,14 +75,15 @@ class ExeBuilder(QWidget):
             QMessageBox.warning(self, "Warning", "Please enter a name for the EXE file.")
             return
         
+        additional_options = self.options_input.text().strip().split()
+        
         target_dir = os.path.dirname(self.selected_file)
         command = [
             "pyinstaller",
             "-w",
             "-F",
-            "--name", exe_name,
-            self.selected_file
-        ]
+            "--name", exe_name
+        ] + additional_options + [self.selected_file]
 
         self.log_output.clear()
         self.log_output.append("Starting build process...\n")

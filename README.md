@@ -4,7 +4,8 @@
    - https://github.com/sahuni/python/tree/main/mov/youtube
 2. 유투브 다운로드 pyq5 - 고화질 다운로드 윈도우 UI
    - https://github.com/sahuni/python/tree/main/mov/youtube_pyQ5
-3. 단어 뒤집기 - 사용자 입력 문자열을 뒤집는 프로그램.
+3. pyinstaller GUI 프로그램
+   - https://github.com/sahuni/python/blob/main/os/pymake.py
 4. 계산기 - 사칙연산을 지원하는 계산기.
 5. 타이머 - 간단한 카운트다운 타이머.
 6. 텍스트 파일 단어 빈도 분석기 - 파일에서 단어 빈도를 계산. 

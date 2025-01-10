@@ -1,3 +1,8 @@
+"""
+Description :  This script organizes files in a folder based on user input.
+Location : https://github.com/sahuni/python
+Date : 2024.12.31
+"""
 import os
 import shutil
 from datetime import datetime

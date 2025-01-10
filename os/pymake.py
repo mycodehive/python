@@ -69,8 +69,8 @@ class ExeBuilder(QWidget):
         target_dir = os.path.dirname(self.selected_file)
         command = [
             "pyinstaller",
-            "--onefile",
-            "--windowed",
+            "-w",
+            "-F",
             "--name", exe_name,
             self.selected_file
         ]

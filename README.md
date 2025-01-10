@@ -69,8 +69,10 @@
 52. Todo 리스트 앱 - 데이터베이스를 사용해 할 일 관리. 
     - https://github.com/sahuni/python/blob/main/work/todo_list_sqlite.py
 53. 웹사이트 성능 모니터링 - 특정 URL의 응답 시간 측정.
+    - https://github.com/sahuni/python/blob/main/we/url_validation.py
 54. 음성 인식기 - SpeechRecognition을 사용한 음성 텍스트 변환.
 55. 캠 사진 촬영 앱 - OpenCV를 사용한 간단한 사진 앱.
+    - https://github.com/sahuni/python/tree/main/mov/openCV
 56. 이미지에서 텍스트 추출 - OCR(예: Tesseract) 사용
     - https://github.com/sahuni/python/blob/main/img/extract_text.py
 57. 뉴스 알림 프로그램 - 특정 주제의 최신 뉴스 크롤링.

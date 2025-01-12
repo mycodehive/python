@@ -74,7 +74,7 @@ def download_m3u8_stream(m3u8_url, ffmpeg_path, output_file):
 
 # Test run
 if __name__ == "__main__":
-    m3u8_url = "https://surrit.com/394f5658-13cb-468d-81fb-36458418d203/1080p/video.m3u8"
+    m3u8_url = "video.m3u8"
     ffmpeg_path = r"C:\\Program Files\\ffmpeg\bin\\ffmpeg.exe"  # User-specified FFmpeg path
     output_file = "output.mp4"  # Name of the file to be downloaded
     download_m3u8_stream(m3u8_url, ffmpeg_path, output_file)

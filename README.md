@@ -43,6 +43,7 @@
     - https://github.com/sahuni/python/blob/main/web/shorturl.py
     - https://github.com/sahuni/python/blob/main/web/tinyurl.py
 32. 메모장 프로그램 - 텍스트 저장/열기 기능 포함.
+   - https://github.com/sahuni/python/blob/main/os/memo.py
 33. 암호 관리 프로그램 - 사용자의 암호를 안전하게 저장
     - https://github.com/sahuni/python/blob/main/secure/pw_management.py
 34. 랜덤 명언 출력기 - 유명한 명언을 랜덤 출력.

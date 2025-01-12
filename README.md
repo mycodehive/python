@@ -83,6 +83,7 @@
 60. 환율 알림 프로그램 - 환율 변화 시 알림.
 61. 자동화 Excel 편집기 - OpenPyXL을 이용한 Excel 데이터 처리.
 62. 데이터베이스 CRUD 앱 - SQLite로 CRUD 기능 구현.
+    - https://github.com/sahuni/python/blob/main/database/sqlite_crud.py
 63. 캘린더 앱 - 날짜 저장 및 메모 기능.
 64. 간단한 게임 - Python의 Pygame으로 벽돌깨기 게임.
 65. HEIC to JPG - GUI

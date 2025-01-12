@@ -1,13 +1,14 @@
 """
-Description : This script builds a Python script into an EXE file using PyInstaller.
+Description :  pyinstaller GUI application using PySide6
 Location : https://github.com/sahuni/python
-Date : 2025.01.11
+Date : 2025.01.10
 """
 import sys
 import os
 import subprocess
-from PySide6.QtWidgets import QApplication, QWidget, QVBoxLayout, QPushButton, QFileDialog, QLabel, QMessageBox, QTextEdit, QLineEdit
-from PySide6.QtCore import QThread, Signal
+from datetime import datetime
+from PySide6.QtWidgets import QApplication, QWidget, QVBoxLayout, QPushButton, QFileDialog, QLabel, QMessageBox, QTextEdit, QLineEdit, QSizePolicy
+from PySide6.QtCore import QThread, Signal, Qt
 
 class BuildThread(QThread):
     progress = Signal(str)
@@ -18,17 +19,21 @@ class BuildThread(QThread):
         self.cwd = cwd
 
     def run(self):
-        process = subprocess.Popen(self.command, cwd=self.cwd, stdout=subprocess.PIPE, stderr=subprocess.STDOUT, text=True)
-        for line in process.stdout:
-            self.progress.emit(line)
-        process.stdout.close()
-        process.wait()
+        try:
+            process = subprocess.Popen(self.command, cwd=self.cwd, stdout=subprocess.PIPE, stderr=subprocess.STDOUT, text=True)
+            for line in process.stdout:
+                self.progress.emit(line)
+            process.stdout.close()
+            process.wait()
+        except Exception as e:
+            self.progress.emit(f"Error during build: {e}")
 
 class ExeBuilder(QWidget):
     def __init__(self):
         super().__init__()
         self.setWindowTitle("PyInstaller EXE Builder")
-        self.setGeometry(300, 300, 500, 500)
+        self.setMinimumSize(500, 500)
+        self.setSizePolicy(QSizePolicy.Expanding, QSizePolicy.Expanding)
 
         self.layout = QVBoxLayout()
         self.file_label = QLabel("Select a Python file to build into EXE")
@@ -65,6 +70,10 @@ class ExeBuilder(QWidget):
             self.file_label.setText(f"Selected File: {file_path}")
             self.build_button.setEnabled(True)
 
+    def validate_options(self, options):
+        forbidden_options = ["-w", "--windowed", "-F", "--onefile"]
+        return [opt for opt in options if opt not in forbidden_options]
+
     def build_exe(self):
         if not self.selected_file:
             QMessageBox.warning(self, "Warning", "Please select a Python file first.")
@@ -75,7 +84,8 @@ class ExeBuilder(QWidget):
             QMessageBox.warning(self, "Warning", "Please enter a name for the EXE file.")
             return
         
-        additional_options = self.options_input.text().strip().split()
+        user_options = self.options_input.text().strip().split()
+        additional_options = self.validate_options(user_options)
         
         target_dir = os.path.dirname(self.selected_file)
         command = [
@@ -86,19 +96,24 @@ class ExeBuilder(QWidget):
         ] + additional_options + [self.selected_file]
 
         self.log_output.clear()
-        self.log_output.append("Starting build process...\n")
+        timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+        self.log_output.append(f"[{timestamp}] Starting build process...\n")
         
+        self.build_button.setEnabled(False)
         self.build_thread = BuildThread(command, target_dir)
         self.build_thread.progress.connect(self.update_log)
         self.build_thread.finished.connect(self.build_finished)
         self.build_thread.start()
 
     def update_log(self, text):
-        self.log_output.append(text)
+        timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+        self.log_output.append(f"[{timestamp}] {text}")
 
     def build_finished(self):
         QMessageBox.information(self, "Finished", "Build process completed.")
-        self.log_output.append("\nBuild process completed.")
+        timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+        self.log_output.append(f"\n[{timestamp}] Build process completed.")
+        self.build_button.setEnabled(True)
 
 def main():
     app = QApplication(sys.argv)

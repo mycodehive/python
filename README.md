@@ -6,7 +6,8 @@
    - https://github.com/sahuni/python/tree/main/mov/youtube_pyQ5
 3. pyinstaller GUI 프로그램
    - https://github.com/sahuni/python/blob/main/os/pymake.py
-4. 계산기 - 사칙연산을 지원하는 계산기.
+4. MP4를 아이폰 Live Photo로 convert
+   - https://github.com/sahuni/python/blob/main/img/mp4tolive/mp4_to_live_photo.py
 5. 타이머 - 간단한 카운트다운 타이머.
 6. 텍스트 파일 단어 빈도 분석기 - 파일에서 단어 빈도를 계산. 
    - https://github.com/sahuni/python/blob/main/analyze/analyze_word.py

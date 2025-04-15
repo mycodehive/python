@@ -28,3 +28,5 @@
     - https://github.com/sahuni/python/blob/main/translate/deep_translator_google.py
 14. 비디오 편집기 - ffmpeg를 이용해 영상 자르기/합치기. 
     - https://github.com/sahuni/python/blob/main/mov_img/ffmpeg_edit.py
+15. 텔레그램 메세지 / 파일 보내기
+    - https://github.com/mycodehive/python/blob/main/msg/telegramBot.py

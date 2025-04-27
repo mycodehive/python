@@ -74,7 +74,8 @@ class ConverterThread(QThread):
 
     def convert_to_mov(self, mp4_path, mov_path):
         """MP4 → MOV 변환 (3초 제한)"""
-        subprocess.run(['ffmpeg', '-i', mp4_path, '-t', '3', '-c:v', 'hevc', '-an', '-vf', 'scale=1080:1920', mov_path])
+        ffmpeg_path = r"C:\\Program Files\\ffmpeg\\bin\\ffmpeg.exe"  # ffmpeg.exe의 전체 경로
+        subprocess.run([ffmpeg_path, '-i', mp4_path, '-t', '3', '-c:v', 'hevc', '-an', '-vf', 'scale=1080:1920', mov_path], shell=True)
         self.progress.emit(f"{os.path.basename(mov_path)} 변환 완료 (3초 제한).")
 
     def add_metadata(self, heic_path, mov_path, asset_id):
